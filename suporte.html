@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSL REDES - Suporte Tecnico - Abra um chamado">
+    <title>Suporte Tecnico - CSL REDES</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="./img/logo.jfif" alt="CSL REDES Logo" class="logo-img">
+                <span class="logo-text">CSL REDES</span>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="o-que-fazemos.html" class="nav-link">O que fazemos</a></li>
+                    <li><a href="solucoes.html" class="nav-link">Soluções</a></li>
+                    <li><a href="tecnologias.html" class="nav-link">Tecnologias</a></li>
+                    <li><a href="parceiros.html" class="nav-link">Empresas Parceiras</a></li>
+                    <li><a href="quem-somos.html" class="nav-link">Quem somos</a></li>
+                    <li><a href="suporte.html" class="nav-link active">Suporte</a></li>
+                    <li><a href="contato.html" class="nav-link btn-nav">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-decoration"></div>
+        <div class="container">
+            <h1 class="page-title fade-in">Suporte Tecnico</h1>
+            <p class="page-subtitle fade-in">Abra um chamado e fale diretamente com nossa equipe tecnica</p>
+        </div>
+    </section>
+
+    <!-- Support Info Section -->
+    <section class="section">
+        <div class="container">
+            <div class="support-intro fade-in">
+                <div class="support-intro-content">
+                    <h2>Atendimento Especializado</h2>
+                    <p>Nossa equipe tecnica esta pronta para resolver qualquer problema de infraestrutura, redes, cloud ou seguranca. Preencha o formulario abaixo para abrir um chamado de suporte.</p>
+                </div>
+                <div class="support-highlights">
+                    <div class="support-highlight-item">
+                        <div class="support-highlight-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="support-highlight-text">
+                            <strong>SLA Garantido</strong>
+                            <p>Primeira resposta em ate 2 horas para chamados de alta prioridade</p>
+                        </div>
+                    </div>
+                    <div class="support-highlight-item">
+                        <div class="support-highlight-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="support-highlight-text">
+                            <strong>Monitoramento NOC 24/7</strong>
+                            <p>Deteccao proativa de problemas antes que afetem seu negocio</p>
+                        </div>
+                    </div>
+                    <div class="support-highlight-item">
+                        <div class="support-highlight-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="support-highlight-text">
+                            <strong>Equipe Certificada</strong>
+                            <p>Profissionais com certificacoes Microsoft, Cisco, Linux e Cloud</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Form Section -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Abrir Chamado de Suporte</h2>
+                <p class="section-subtitle">Preencha os dados abaixo para que possamos atende-lo da melhor forma</p>
+            </div>
+            <div class="support-form-wrapper fade-in">
+                <form class="support-form" id="supportForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="supportName">Nome completo *</label>
+                            <input type="text" id="supportName" name="supportName" required placeholder="Seu nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="supportCompany">Empresa (opcional)</label>
+                            <input type="text" id="supportCompany" name="supportCompany" placeholder="Nome da empresa">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="supportEmail">Email *</label>
+                            <input type="email" id="supportEmail" name="supportEmail" required placeholder="seu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="supportPhone">Telefone / WhatsApp *</label>
+                            <input type="tel" id="supportPhone" name="supportPhone" required placeholder="(11) 99999-9999">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="supportCategory">Categoria do Suporte *</label>
+                            <select id="supportCategory" name="supportCategory" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="infraestrutura">Infraestrutura</option>
+                                <option value="cloud">Cloud</option>
+                                <option value="redes">Redes</option>
+                                <option value="seguranca">Seguranca</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="supportPriority">Nivel de Prioridade *</label>
+                            <select id="supportPriority" name="supportPriority" required>
+                                <option value="">Selecione a prioridade</option>
+                                <option value="baixa">Baixa - Pode aguardar</option>
+                                <option value="media">Media - Impacto moderado</option>
+                                <option value="alta">Alta - Impacto critico no negocio</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="supportMessage">Descricao do Problema *</label>
+                        <textarea id="supportMessage" name="supportMessage" rows="6" required placeholder="Descreva detalhadamente o problema que esta enfrentando. Quanto mais informacoes, mais rapido poderemos ajuda-lo."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Enviar Chamado</button>
+                </form>
+                <div id="supportFormSuccess" class="form-success" style="display: none;">
+                    <div class="success-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Chamado Enviado com Sucesso!</h3>
+                    <p>Recebemos seu chamado e nossa equipe entrara em contato em breve conforme o SLA da prioridade selecionada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Info Cards Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Informacoes de Atendimento</h2>
+                <p class="section-subtitle">Confiabilidade e excelencia tecnica para sua empresa</p>
+            </div>
+            <div class="support-info-grid fade-in">
+                <div class="support-info-card">
+                    <div class="support-info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3>Horario de Atendimento</h3>
+                    <p><strong>Suporte Comercial:</strong><br>Segunda a Sexta: 8h as 18h</p>
+                    <p><strong>Suporte NOC (Clientes):</strong><br>24 horas, 7 dias por semana</p>
+                </div>
+                <div class="support-info-card">
+                    <div class="support-info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Tempo de Resposta (SLA)</h3>
+                    <p><strong>Prioridade Alta:</strong> Ate 2 horas</p>
+                    <p><strong>Prioridade Media:</strong> Ate 4 horas</p>
+                    <p><strong>Prioridade Baixa:</strong> Ate 8 horas</p>
+                </div>
+                <div class="support-info-card">
+                    <div class="support-info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <h3>Contato Direto</h3>
+                    <p><strong>Telefone:</strong> (11) 1234-5678</p>
+                    <p><strong>Email:</strong> suporte@cslredes.com.br</p>
+                    <p><strong>WhatsApp:</strong> (11) 99999-9999</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-bg-decoration"></div>
+        <div class="container cta-content">
+            <h2 class="cta-title">Precisa de suporte urgente?</h2>
+            <p class="cta-description">Para emergencias, ligue diretamente para nossa central de atendimento.</p>
+            <a href="tel:+551112345678" class="btn btn-cta">Ligar Agora</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="./img/logo.jfif" alt="CSL REDES Logo" class="footer-logo-img">
+                        <span>CSL REDES</span>
+                    </a>
+                    <p class="footer-description">Solucoes completas em tecnologia, redes e infraestrutura para empresas que buscam excelencia em TI.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rapidos</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="o-que-fazemos.html">O que fazemos</a></li>
+                        <li><a href="solucoes.html">Solucoes</a></li>
+                        <li><a href="tecnologias.html">Tecnologias</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="quem-somos.html">Quem somos</a></li>
+                        <li><a href="parceiros.html">Empresas Parceiras</a></li>
+                        <li><a href="suporte.html">Suporte</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><strong>Email:</strong> contato@cslredes.com.br</p>
+                    <p><strong>Telefone:</strong> (11) 1234-5678</p>
+                    <p><strong>Endereco:</strong> Sao Paulo, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CSL REDES. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
