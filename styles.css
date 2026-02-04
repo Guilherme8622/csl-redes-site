@@ -5,8 +5,8 @@
 /* === CSS Variables === */
 :root {
     /* Primary Colors */
-    --blue-dark: #0B2C4D;
-    --blue-medium: #4A6FA5;
+    --blue-dark: #0B2C4D; /* Esse já é a cor exata da sua Hero */
+    --blue-medium: #164E80; /* Ajustado para ser um tom mais sóbrio */
     
     /* Gray Colors */
     --gray-dark: #3A3A3A;
@@ -16,18 +16,13 @@
     /* Accent Colors */
     --green-strong: #15803D;
     --green-hover: #166534;
+    --green-neon: #4ade80; /* Adicionei essa variável para o brilho */
     
     /* White */
     --white: #FFFFFF;
     
     /* Gradients */
-    --gradient-blue: linear-gradient(135deg, #0B2C4D 0%, #4A6FA5 100%);
-    
-    /* Shadows */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+    --gradient-blue: linear-gradient(135deg, #0B2C4D 0%, #164E80 100%);
     
     /* Transitions */
     --transition-fast: 0.2s ease;
@@ -160,20 +155,7 @@ h4 { font-size: 1.25rem; }
 }
 
 /* === Header === */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: var(--white);
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-normal);
-}
 
-.header.scrolled {
-    box-shadow: var(--shadow-md);
-}
 
 .header-content {
     display: flex;
@@ -196,7 +178,8 @@ h4 { font-size: 1.25rem; }
 .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--blue-dark);
+    color: #FFFFFF; /* Mudado para Branco */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 /* Navigation */
@@ -434,8 +417,18 @@ white-space: nowrap;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #E8EEF3 0%, #C5D3DE 50%, #8FA6B8 100%);
     z-index: -2;
+
+    /* --- MESCLAGEM REALIZADA --- */
+
+    /* 1. Imagem de Fundo (artevisual.jpg) */
+    background: url('./img/artevisual.jpg') center center no-repeat;
+    
+    /* 2. CORREÇÃO DO ZOOM: Força a imagem a caber exatamente no espaço (sem cortar) */
+    background-size: cover
+
+    /* 3. Máscara Azul Escura (Para o texto branco ficar legível) */
+    box-shadow: inset 0 0 0 1000px rgba(11, 44, 77, 0.92);
 }
 
 .hero-new-corner {
@@ -578,6 +571,10 @@ white-space: nowrap;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* --- CORREÇÃO OBRIGATÓRIA --- */
+    position: relative; /* Transforma a div em "âncora" */
+    z-index: 1;
+    min-height: 300px; /* Garante altura mínima caso a imagem demore */
 }
 
 .hero-logo-box {
@@ -585,6 +582,12 @@ white-space: nowrap;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    
+    /* --- AJUSTES PARA ANIMAÇÃO --- */
+    position: relative; 
+    z-index: 1;
+    overflow: hidden; /* <--- OBRIGATÓRIO: Mantém a luz dentro da caixa */
+    border-radius: 20px; /* <--- OPCIONAL: Deixa os cantos da luz arredondados */
 }
 
 .hero-logo-img {
@@ -1716,20 +1719,197 @@ white-space: nowrap;
    Hero Network Animation Layer
    =============================== */
 
-   .hero-network-canvas {
-    position: absolute;
-    inset: 0;
+/* No final do arquivo styles.css */
+/* =========================================
+   CSL REDES - ANIMAÇÃO DE ENERGIA (CSS PURO)
+   ========================================= */
+
+/* =================================================================
+   CORREÇÃO FINAL: HERO COM BRILHO SUAVE (GLOW)
+   (Substitua o bloco final do seu CSS por este código)
+   ================================================================= */
+
+/* 1. Imagem de Fundo Total (artevisual.jpg) */
+.hero-new-bg {
+    /* VOLTAMOS PARA 'cover': Mantém a proporção e qualidade, cortando excessos se necessário */
+    background: url('./img/artevisual.jpg') center center / cover no-repeat !important;
+    
+    /* Máscara escura (0.85) para garantir contraste */
+    box-shadow: inset 0 0 0 1000px rgba(11, 44, 77, 0.85) !important;
+    
+    position: absolute !important;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -2 !important;
+    opacity: 1 !important;
+    
+    /* Sem animação de zoom */
+    animation: none !important;
+}
+
+/* 2. Oculta elementos desnecessários */
+.hero-new-image,
+.hero-logo-box {
+    display: none !important;
+}
+
+/* 3. Estrutura do Texto (Esquerda) */
+.hero-new-content {
+    grid-template-columns: 1fr !important;
+    text-align: left !important;
+    padding-top: 60px !important;
+    position: relative !important;
+    z-index: 2 !important;
+    align-items: center !important; /* Centraliza verticalmente na tela */
+}
+
+/* 4. Brilho Suave (Glow Difuso) */
+.hero-new {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.hero-new::after {
+    content: '';
+    position: absolute; 
+    top: 0; 
+    left: -100%;
+    width: 100%; 
+    height: 100%;
+    
+    /* Gradiente suave e largo */
+    background: linear-gradient(
+        90deg, 
+        transparent 0%, 
+        rgba(0, 243, 255, 0) 20%, 
+        rgba(0, 243, 255, 0.15) 50%, 
+        rgba(0, 243, 255, 0) 80%, 
+        transparent 100%
+    );
+    
+    /* Desfoque alto para o efeito "Glow" */
+    filter: blur(30px); 
+    transform: skewX(-10deg);
     pointer-events: none;
+    z-index: -1;
+    
+    /* Animação lenta (12s) */
+    animation: scanner-suave 7s infinite linear;
+}
+
+@keyframes scanner-suave {
+    0% { left: -150%; opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { left: 150%; opacity: 0; }
+}
+
+/* 5. Estilos de Texto e Cores */
+.hero-new .hero-new-title,
+.hero-new .hero-new-description,
+.hero-new .hero-checklist li {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
+    position: relative;
     z-index: 2;
 }
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+.hero-new .hero-checklist li svg {
+    color: #4ade80 !important;
+    filter: drop-shadow(0 0 5px rgba(74, 222, 128, 0.6));
 }
 
-.fade-in.active {
-    opacity: 1;
-    transform: translateY(0);
+.hero-new .hero-badge {
+    background-color: rgba(21, 128, 61, 0.8) !important;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.hero-new .btn-outline-green {
+    color: #4ade80 !important;
+    border-color: #4ade80 !important;
+}
+
+.hero-new .btn-outline-green:hover {
+    background-color: #4ade80 !important;
+    color: #0B2C4D !important;
+}
+/* =================================================================
+   MODIFICAÇÃO: HEADER GLASSMORPHISM (Menu Transparente/Vidro)
+   (Adicione ao FINAL do arquivo CSS)
+   ================================================================= */
+
+/* === Header === */
+.header {
+    /* 1. Posicionamento (Estrutura original) */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    
+    /* 2. Novo Estilo Glassmorphism (Substitui o fundo branco) */
+    background-color: rgba(11, 44, 77, 0.90); /* Azul escuro translúcido */
+    backdrop-filter: blur(12px);               /* O desfoque do vidro */
+    -webkit-backdrop-filter: blur(12px);       /* Compatibilidade Safari */
+    
+    /* 3. Acabamentos Visuais */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borda fina */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);         /* Sombra suave */
+    transition: all var(--transition-normal);
+}
+
+.header.scrolled {
+    /* Quando rolar a página, aumenta um pouco a sombra */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 2. Texto do Logo e Links em BRANCO */
+.logo-text, 
+.nav-link {
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5) !important; /* Sombra leve para leitura */
+    transition: color 0.3s ease !important;
+}
+
+/* 3. Efeito Hover (Ao passar o mouse) - Verde Neon */
+.nav-link:hover, 
+.nav-link.active {
+    color: #4ade80 !important;
+}
+
+/* A linha embaixo do link ativo também fica verde */
+.nav-link::after {
+    background-color: #4ade80 !important;
+}
+
+/* 4. Botão "Contato" no Menu (Verde sólido) */
+.btn-nav {
+    background-color: #15803D !important; /* Verde mais escuro base */
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+.btn-nav:hover {
+    background-color: #4ade80 !important; /* Verde neon no hover */
+    color: #0B2C4D !important; /* Texto escuro para contraste */
+}
+
+/* 5. Menu Mobile (Hamburguer) - Riscos Brancos */
+.menu-toggle span {
+    background-color: #FFFFFF !important;
+}
+
+/* 6. Correção para o Menu Aberto no Celular */
+@media (max-width: 991px) {
+    .nav {
+        /* No celular, o fundo precisa ser mais sólido para não misturar */
+        background-color: #0B2C4D !important; 
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 20px !important;
+    }
+    
+    .nav-link {
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
 }
