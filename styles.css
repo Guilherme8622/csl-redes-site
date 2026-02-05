@@ -117,12 +117,12 @@ h4 { font-size: 1.25rem; }
 }
 
 .btn-primary {
-    background-color: var(--green-strong);
+    background-color: #0f6b32;
     color: var(--white);
 }
 
 .btn-primary:hover {
-    background-color: var(--green-hover);
+    background-color: #0c5226;
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -425,7 +425,7 @@ white-space: nowrap;
     background: url('./img/artevisual.jpg') center center no-repeat;
     
     /* 2. CORREÇÃO DO ZOOM: Força a imagem a caber exatamente no espaço (sem cortar) */
-    background-size: cover
+    background-size: cover;
 
     /* 3. Máscara Azul Escura (Para o texto branco ficar legível) */
     box-shadow: inset 0 0 0 1000px rgba(11, 44, 77, 0.92);
@@ -478,7 +478,7 @@ white-space: nowrap;
     font-weight: 700;
     line-height: 1.15;
     margin-bottom: 20px;
-    white-space: nowrap;
+    white-space: var(--transition-normal);
 }
 
 @media (min-width: 576px) {
@@ -1730,21 +1730,7 @@ white-space: nowrap;
    ================================================================= */
 
 /* 1. Imagem de Fundo Total (artevisual.jpg) */
-.hero-new-bg {
-    /* VOLTAMOS PARA 'cover': Mantém a proporção e qualidade, cortando excessos se necessário */
-    background: url('./img/artevisual.jpg') center center / cover no-repeat !important;
-    
-    /* Máscara escura (0.85) para garantir contraste */
-    box-shadow: inset 0 0 0 1000px rgba(11, 44, 77, 0.85) !important;
-    
-    position: absolute !important;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -2 !important;
-    opacity: 1 !important;
-    
-    /* Sem animação de zoom */
-    animation: none !important;
-}
+
 
 /* 2. Oculta elementos desnecessários */
 .hero-new-image,
@@ -1754,12 +1740,11 @@ white-space: nowrap;
 
 /* 3. Estrutura do Texto (Esquerda) */
 .hero-new-content {
-    grid-template-columns: 1fr !important;
-    text-align: left !important;
-    padding-top: 60px !important;
-    position: relative !important;
-    z-index: 2 !important;
-    align-items: center !important; /* Centraliza verticalmente na tela */
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+    padding: 60px 20px;
+    align-items: center;
 }
 
 /* 4. Brilho Suave (Glow Difuso) */
@@ -1911,5 +1896,90 @@ white-space: nowrap;
     
     .nav-link {
         border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+}
+/* ===== HERO FINAL AJUSTADO PARA TODAS AS TELAS ===== */
+
+.hero-new-text {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.hero-checklist {
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+.hero-checklist li {
+    justify-content: center;
+    text-align: left;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .hero-new-title {
+        font-size: 2rem;
+    }
+
+    .hero-new-description {
+        font-size: 1rem;
+    }
+}
+/* ===== CENTRALIZA CHECKLIST E BOTÕES NO HERO ===== */
+
+/* Centraliza o bloco inteiro da checklist */
+.hero-checklist {
+    margin: 30px auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cada item fica alinhado certinho */
+.hero-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 720px;
+    width: 100%;
+}
+
+/* Ícone sempre alinhado no topo */
+.hero-checklist li svg {
+    margin-top: 4px;
+}
+
+/* Texto quebra bem e fica alinhado */
+.hero-checklist li span {
+    display: block;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* ===== BOTÕES CENTRALIZADOS ===== */
+
+.hero-new-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+@media (max-width: 768px) {
+    .hero-new-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-new-buttons a {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+
+    .hero-checklist li {
+        align-items: flex-start;
     }
 }
